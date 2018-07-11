@@ -7,7 +7,10 @@ class GymEvaluator(object):
         self.M = M
         self.T = T
 
-    def eval(self, x):
+    def set_seed(self, seed):
+        self.env.seed(seed)
+
+    def evaluate(self, x):
         r_sum = 0
         for episode in range(self.M):
             state = self.env.reset()
